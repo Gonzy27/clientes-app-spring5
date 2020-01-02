@@ -2,16 +2,21 @@ package com.bolsadeideas.springboot.backend.apirest.models.services;
 
 import java.util.List;
 
-import com.bolsadeideas.springboot.backend.apirest.models.entity.Cliente;
-import com.bolsadeideas.springboot.backend.apirest.models.entity.Region;
-import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-@Service
+import com.bolsadeideas.springboot.backend.apirest.models.entity.Cliente;
+
 public interface IClienteService {
-	
+
 	public List<Cliente> findAll();
-	public Cliente save(Cliente cliente);
-	public void delete(Long id);
+	
+	public Page<Cliente> findAll(Pageable pageable);
+	
 	public Cliente findById(Long id);
-	public List<Region> findAllRegiones();
+	
+	public Cliente save(Cliente cliente);
+	
+	public void delete(Long id);
+
 }

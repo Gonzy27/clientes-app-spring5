@@ -46,6 +46,8 @@ public class Cliente implements Serializable {
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
+	
+	private String foto;
 
 	@NotNull(message = "la región no puede ser vacía")
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -96,6 +98,14 @@ public class Cliente implements Serializable {
 
 	public void setCreateAt(Date createAt) {
 		this.createAt = createAt;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 	public Region getRegion() {
